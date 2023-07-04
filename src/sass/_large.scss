@@ -1,0 +1,29 @@
+@media (min-width: 992px) {
+	.header {
+		&__main {
+			&-txt {
+				h1 {
+					font-size: 20rem;
+				}
+			}
+			&-txt-second {
+				h2 {
+					font-size: 19rem;
+				}
+			}
+		}
+	}
+	.work__section {
+		&-img {
+			&-txt {
+				font-size: 9rem;
+			}
+		}
+		&-desc {
+			width: 50%;
+			padding: 0em 3em;
+			font-size: 3.6rem;
+			height: 500px;
+		}
+	}
+}

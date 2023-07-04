@@ -1,0 +1,408 @@
+@use './colors' as *;
+@use './mixin' as *;
+@use './animations' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-family: 'Catamaran', sans-serif;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	scroll-padding-top: 50px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	max-width: 1020px;
+	padding: 0em 1em;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+}
+
+.nav__burger {
+	display: block;
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	font-size: 2rem;
+	z-index: 200;
+	cursor: pointer;
+	transition: color 0.4s;
+	&:hover {
+		color: $hamburger-hover;
+	}
+}
+
+.hideBurger {
+	display: none;
+}
+
+.sectionHeader {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 8em 0em;
+	h2 {
+		font-size: 3rem;
+		font-weight: 100;
+	}
+}
+
+.nav {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	transform: translateY(-100%);
+	background-color: $menuColor;
+	overflow: hidden;
+	z-index: 100;
+	&__ulList {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2em;
+		font-size: 2rem;
+		margin: 0.5em;
+		width: 100%;
+		height: 400px;
+		list-style: none;
+		background-color: $main-color;
+	}
+	&__link {
+		color: $blackColor;
+		transition: opacity 0.3s;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+	&__button {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		font-size: 2rem;
+		padding: 2em;
+		cursor: pointer;
+		transition: color 0.3s;
+		animation: burgerCloseBtn 1s 0s both;
+		&:hover {
+			color: $hamburger-hover;
+			animation: burgerHoverBtn 1s 0s both;
+		}
+	}
+}
+.showNavigation {
+	animation: showMenu 0.6s 0s both;
+}
+.hideNavigation {
+	animation: hideMenu 0.4s 0s both;
+}
+.showMenu {
+	animation: tilt-in-fwd-tr 0.6s 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.header {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url('/dist/img/HeroBig.jpeg');
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	&__main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80%;
+		&-txt {
+			overflow: hidden;
+			h1 {
+				font-size: 6rem;
+				font-weight: 100;
+				transform: translateY(100%);
+				animation: showHeader 1s 0s both;
+			}
+			span {
+				font-size: 2rem;
+			}
+		}
+		&-txt-second {
+			overflow: hidden;
+			h2 {
+				font-size: 6rem;
+				font-weight: 100;
+				transform: translateY(100%);
+				animation: showHeader 1s 0.7s both;
+			}
+		}
+	}
+}
+
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__card {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		&-section--border {
+			border-left: 1px solid $greyBorder;
+			border-right: 1px solid $greyBorder;
+		}
+		&-txt {
+			padding: 1em;
+			h4,
+			p {
+				padding-bottom: 3em;
+			}
+		}
+		&-img {
+			padding: 0;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				transition: transform 0.3s;
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+}
+
+.accordeon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10em 0em;
+	z-index: 20;
+	&__card {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 80px;
+		border: 1px solid $greyBorder;
+		overflow: hidden;
+		transition: background-color 0.5s;
+		z-index: 5;
+		cursor: pointer;
+		&::after {
+			position: absolute;
+			content: '';
+			width: 120%;
+			height: 100%;
+			border-top-left-radius: 35px;
+			border-bottom-left-radius: 80px;
+			background-color: $accordeonHover;
+			z-index: 0;
+			animation: cardHoverBack 0.5s 0s both;
+			transform: translateX(100%);
+		}
+		&-top {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 0.3em 1em;
+			width: 100%;
+			z-index: 2;
+			h3 {
+				font-size: 3rem;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+		}
+		&-bottom {
+			width: 50%;
+			margin: 1em 0em;
+			z-index: 10;
+			&-txt {
+				color: $blackColor;
+				transition: color 0.6s;
+			}
+		}
+	}
+	&__number {
+		color: $mediumTxt;
+		font-size: 3rem;
+		padding-right: 0.5em;
+	}
+	&__button {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		&-plus {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			height: 100%;
+			background-color: $blackColor;
+			animation: minusToPlus 0.6s 0s both;
+			transition: background-color 0.3s;
+		}
+		&-minus {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			height: 1px;
+			background-color: $blackColor;
+			transition: background-color 0.3s;
+			pointer-events: none;
+		}
+	}
+	&__title {
+		font-size: 2rem;
+		transition: color 0.6s;
+	}
+}
+.accordeonOpen {
+	height: fit-content;
+}
+.accordeon__card-top.hidePlus .accordeon__button-plus {
+	animation: plusToMinus 0.5s 0s both;
+}
+
+.accordeon__card:hover::after {
+	animation: cardHover 1.2s 0s both;
+}
+.accordeon__card:hover .accordeon__title {
+	color: $main-color;
+}
+.accordeon__card:hover .accordeon__card-bottom-txt {
+	color: $main-color;
+}
+
+.accordeon__card:hover .accordeon__button-plus {
+	background-color: $main-color;
+}
+.accordeon__card:hover .accordeon__button-minus {
+	background-color: $main-color;
+}
+
+.work__section {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	&-img {
+		width: 100%;
+		height: 800px;
+		overflow: hidden;
+		&--one {
+			background-image: url('/dist/img/buildingOne.jpeg');
+			background-position: center;
+			background-size: cover;
+			z-index: 10;
+		}
+		&--two {
+			background-image: url('/dist/img/buildingTwo.jpeg');
+			background-position: center;
+			background-size: cover;
+			z-index: 8;
+		}
+		&--three {
+			background-image: url('/dist/img/buildingThree.jpeg');
+			background-position: center;
+			background-size: cover;
+			z-index: 6;
+		}
+		&-txt {
+			padding: 1em;
+			font-size: 4rem;
+			color: $main-color;
+			transform: translateY(-70%);
+			h3 {
+				z-index: 1;
+				font-weight: 300;
+			}
+		}
+	}
+	&-desc {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		height: 260px;
+		padding: 1em;
+		overflow: hidden;
+	}
+	&-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 3em 0em;
+		padding: 0.2em 0.5em;
+		width: 100px;
+		border: 1px solid $blackColor;
+		opacity: 0;
+		cursor: pointer;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: $blackColor;
+		}
+		a {
+			color: $blackColor;
+			transition: color 0.3s;
+			font-size: 1.4rem;
+		}
+		&:hover a {
+			color: $main-color;
+		}
+	}
+}
+
+.hide-work-desc {
+	animation: hideWorkDes 0.5s 0s both;
+}
+.active-desc {
+	display: block;
+}
+.unactive-desc {
+	display: block;
+}
+
+.btnAnim {
+	animation: btn-anim 0.5s 0.2s both;
+}
+
+.contact {
+	height: 150vh;
+}
+
+@import './small';
+@import './medium';
+@import './large';
