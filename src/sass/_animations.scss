@@ -121,3 +121,29 @@
 		transform: translate(0);
 	}
 }
+
+@keyframes showBuilding {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+@keyframes hideBuilding {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes scrollText {
+	from   { transform: translateX(-100%); }
+	to { transform: translateX(100%); }
+  }
+@keyframes scrollText2 {
+	from   { transform: translateX(-100%); }
+	to { transform: translateX(100%); }
+  }

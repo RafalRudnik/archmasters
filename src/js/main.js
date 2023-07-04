@@ -5,6 +5,9 @@ const navList = document.querySelector('.nav__ulList');
 const allLinks = document.querySelectorAll('.nav__link');
 
 const acordeonBoxes = document.querySelectorAll('.accordeon__card');
+const btnOne = document.querySelector('.work__section-button-one');
+const closeBtn = document.querySelector('.close');
+const buidlingOne = document.querySelector('.building-one');
 
 const handleShowMenu = () => {
 	navMenu.classList.toggle('showNavigation');
@@ -52,7 +55,16 @@ const accordeonObserver = () => {
 		}
 	});
 };
+//this function saves mixed height for ScrollTrigger by closing accordeon
 
+const handleBuidlingShow = () => {
+	buidlingOne.classList.toggle('showBuilding');
+	buidlingOne.classList.remove('hideBuilding');
+};
+const handBuldingClose = () => {
+	buidlingOne.classList.toggle('showBuilding');
+	buidlingOne.classList.add('hideBuilding');
+};
 
 burgerBtn.addEventListener('click', handleShowMenu);
 navBtn.addEventListener('click', handleShowMenu);
@@ -60,4 +72,6 @@ navBtn.addEventListener('click', handlehideMenu);
 allLinks.forEach((link) => link.addEventListener('click', handleShowMenu));
 allLinks.forEach((link) => link.addEventListener('click', handlehideMenu));
 acordeonBoxes.forEach((box) => box.addEventListener('click', closeCard));
+btnOne.addEventListener('click', handleBuidlingShow);
+closeBtn.addEventListener('click', handBuldingClose);
 window.addEventListener('scroll', accordeonObserver);

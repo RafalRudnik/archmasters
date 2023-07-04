@@ -13,13 +13,11 @@ const allWorkDescriptionBox = document.querySelectorAll('.work__section-desc');
 const btnOne = document.querySelector('.work__section-button-one');
 const btnTwo = document.querySelector('.work__section-button-two');
 const btnThree = document.querySelector('.work__section-button-three');
+const contactBanner = document.querySelector('.contact__baner-anim');
 
 let resolution = gsap.matchMedia();
 
 resolution.add('(min-width: 768px)', () => {
-	
-	
-
 	allWorkDescriptionBox.forEach((section) => {
 		gsap.fromTo(
 			section,
@@ -45,7 +43,7 @@ resolution.add('(min-width: 768px)', () => {
 			desc,
 			{ y: '-=30px' },
 			{
-				y: '+=105',
+				y: '+=230px',
 				stagger: 0.2,
 				duration: 1,
 				ease: 'easeInOut',
@@ -59,8 +57,7 @@ resolution.add('(min-width: 768px)', () => {
 			}
 		);
 	});
-
-})
+});
 
 gsap.fromTo(
 	headerTxt,
@@ -126,6 +123,23 @@ gsap.fromTo(
 			start: 'top 50%',
 			end: 'top -30%', //gdzie ma sie skonczyc
 			// scrub: true, //scroll dziala w obie strony
+		},
+	}
+);
+
+gsap.fromTo(
+	contactBanner,
+	{ y: 0 },
+	{
+		y: '+=100',
+		duration: 1,
+		ease: 'easeInOut',
+		scrollTrigger: {
+			trigger: contactBanner,
+			start: 'top 60%',
+			end: 'top: 30%', //gdzie ma sie skonczyc
+			scrub: true, //scroll dziala w obie strony
+			pin: true,
 		},
 	}
 );
@@ -229,7 +243,5 @@ const test2 = () => {
 		ease: 'none',
 	});
 };
-
-
 
 window.addEventListener('scroll', handleObserver);
