@@ -29,7 +29,7 @@ resolution.add('(min-width: 768px)', () => {
 				ease: 'easeInOut',
 				scrollTrigger: {
 					trigger: section,
-					start: 'top 20%',
+					start: 'top 0%',
 					end: 'bottom 0%', //gdzie ma sie skonczyc
 					scrub: true, //scroll dziala w obie strony
 					pin: true,

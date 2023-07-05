@@ -139,12 +139,20 @@
 	}
 }
 
+// @keyframes scrollText {
+// 	from   { transform: translateX(-100%); }
+// 	to { transform: translateX(100%); }
+//   }
+// @keyframes scrollText2 {
+// 	from   { transform: translateX(-100%); }
+// 	to { transform: translateX(100%); }
+//   }
 @keyframes scrollText {
 	from   { transform: translateX(-100%); }
-	to { transform: translateX(100%); }
+	to { transform: translateX(0%); }
   }
 @keyframes scrollText2 {
-	from   { transform: translateX(-100%); }
+	from   { transform: translateX(0%); }
 	to { transform: translateX(100%); }
   }
 @keyframes scrollText3 {

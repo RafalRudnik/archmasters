@@ -318,7 +318,7 @@ a {
 	overflow: hidden;
 	&-img {
 		width: 100%;
-		height: 800px;
+		height: 600px;
 		overflow: hidden;
 		&--one {
 			background-image: url('../img/buildingOne.jpeg');
@@ -428,7 +428,7 @@ main {
 			justify-content: center;
 			width: 100%;
 			height: 900px;
-			background-image: url('../img/buildingOne-add1sm.jpeg');
+			background-image: url('../img/buildingOne-add1.jpeg');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -466,7 +466,7 @@ main {
 		position: relative;
 		width: 100%;
 		height: 800px;
-		background-image: url('../img/buildingOne-add3sm.jpeg');
+		background-image: url('../img/buildingOne-add3.jpeg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -537,11 +537,12 @@ main {
 				-webkit-text-stroke: 1px $blackColor;
 			}
 			&-one {
-				animation: scrollText 66s infinite linear;
+				animation: scrollText 40s infinite linear;
 			}
 			&-two {
-				transform: translateX(-100%);
-				animation: scrollText2 66s 33s infinite linear;
+				// transform: translateX(-100%);
+				// animation: scrollText2 66s 33s infinite linear;
+				animation: scrollText2 40s 0s infinite linear;
 			}
 		}
 	}

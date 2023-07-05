@@ -61,6 +61,7 @@
 		flex-direction: row;
 		&-img {
 			width: 50%;
+			height: 800px;
 			&-txt {
 				font-size: 5rem;
 			}
@@ -74,7 +75,6 @@
 	.building-one {
 		&__card {
 			&-img {
-				background-image: url('../img/buildingOne-add1.jpeg');
 				h2 {
 					font-size: 12rem;
 					font-weight: 200;
@@ -102,9 +102,6 @@
 				font-size: 3rem;
 				font-weight: 100;
 			}
-		}
-		&__baner {
-			background-image: url('../img/buildingOne-add3.jpeg');
 		}
 	}
 	.contact {
