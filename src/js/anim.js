@@ -15,7 +15,6 @@ const btnTwo = document.querySelector('.work__section-button-two');
 const btnThree = document.querySelector('.work__section-button-three');
 const contactBanner = document.querySelector('.contact__baner-anim');
 
-
 let resolution = gsap.matchMedia();
 
 resolution.add('(min-width: 768px)', () => {
@@ -42,16 +41,17 @@ resolution.add('(min-width: 768px)', () => {
 	imgDesc.forEach((desc) => {
 		gsap.fromTo(
 			desc,
-			{ y: '-=30px' },
+			{ y: '-=0px', opacity: 0.5 },
 			{
-				y: '+=230px',
+				y: '+=130px',
 				stagger: 0.2,
 				duration: 1,
+				opacity: 1,
 				ease: 'easeInOut',
 				scrollTrigger: {
 					trigger: desc,
 					start: 'top 30%',
-					end: 'top -25%', //gdzie ma sie skonczyc
+					end: 'bottom -20%', //gdzie ma sie skonczyc
 					scrub: true, //scroll dziala w obie strony
 					pin: true,
 				},
@@ -78,7 +78,6 @@ gsap.fromTo(
 		},
 	}
 );
-
 
 gsap.fromTo(
 	aboutLeftCard,

@@ -5,7 +5,8 @@ const navList = document.querySelector('.nav__ulList');
 const allLinks = document.querySelectorAll('.nav__link');
 
 const acordeonBoxes = document.querySelectorAll('.accordeon__card');
-const btnOne = document.querySelector('.work__section-button-one');
+// const btnOne = document.querySelector('.work__section-button-one');
+const btns = document.querySelectorAll('.work__section-button');
 const closeBtn = document.querySelector('.close');
 const buidlingOne = document.querySelector('.building-one');
 const buildingOneHeader = document.querySelector('.building-one__card-img h2');
@@ -67,6 +68,13 @@ const handBuldingClose = () => {
 	buidlingOne.classList.toggle('showBuilding');
 	buidlingOne.classList.add('hideBuilding');
 	buildingOneHeader.classList.toggle('btnAnim');
+	goToTheTop();
+};
+const goToTheTop = () => {
+	window.buidlingOne.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
 };
 
 burgerBtn.addEventListener('click', handleShowMenu);
@@ -76,6 +84,7 @@ allLinks.forEach((link) => link.addEventListener('click', handleShowMenu));
 allLinks.forEach((link) => link.addEventListener('click', handlehideMenu));
 allLinks.forEach((link) => link.addEventListener('click', handBuldingClose));
 acordeonBoxes.forEach((box) => box.addEventListener('click', closeCard));
-btnOne.addEventListener('click', handleBuidlingShow);
+btns.forEach((btn) => btn.addEventListener('click', handleBuidlingShow));
+// btnOne.addEventListener('click', handleBuidlingShow);
 closeBtn.addEventListener('click', handBuldingClose);
 window.addEventListener('scroll', accordeonObserver);

@@ -330,13 +330,13 @@ a {
 			background-image: url('/dist/img/buildingTwo.jpeg');
 			background-position: center;
 			background-size: cover;
-			z-index: 8;
+			z-index: 12;
 		}
 		&--three {
 			background-image: url('/dist/img/buildingThree.jpeg');
 			background-position: center;
 			background-size: cover;
-			z-index: 6;
+			z-index: 14;
 		}
 		&-txt {
 			padding: 1em;
@@ -398,10 +398,14 @@ a {
 	animation: btn-anim 0.5s 0.2s both;
 }
 
+main {
+	overflow: hidden;
+}
+
 .building-one {
 	position: fixed;
-	bottom: 0;
 	top: 0;
+	bottom: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -450,6 +454,12 @@ a {
 			padding: 1em;
 			width: 100%;
 			font-size: 2rem;
+			&--center {
+				align-self: center;
+			}
+		}
+		&-desc {
+			padding: 2em;
 		}
 	}
 	&__baner {
