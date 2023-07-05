@@ -24,13 +24,12 @@ resolution.add('(min-width: 768px)', () => {
 			{ opacity: 1 },
 			{
 				opacity: 0,
-				stagger: 0.2,
 				duration: 1,
 				ease: 'easeInOut',
 				scrollTrigger: {
 					trigger: section,
 					start: 'top 0%',
-					end: 'bottom 0%', //gdzie ma sie skonczyc
+					end: 'bottom -50%', //gdzie ma sie skonczyc
 					scrub: true, //scroll dziala w obie strony
 					pin: true,
 				},

@@ -355,9 +355,10 @@ a {
 		flex-direction: column;
 		justify-content: space-between;
 		width: 100%;
-		height: 260px;
+		height: fit-content;
 		padding: 1em;
 		overflow: hidden;
+		border: 1px solid tomato;
 	}
 	&-button {
 		display: flex;
