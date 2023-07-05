@@ -29,7 +29,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 100%;
 	max-width: 1020px;
 	padding: 0em 1em;
 	overflow: hidden;
@@ -402,49 +401,98 @@ a {
 .building-one {
 	position: fixed;
 	bottom: 0;
-	left: 0;
-	width: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
 	background-color: $main-color;
 	z-index: 50;
-	overflow: hidden;
 	transform: translateY(100%);
+	overflow-y: scroll;
+	overflow-x: hidden;
 	&__card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		width: 100%;
 		&-img {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: 100%;
-			height: 800px;
+			height: 900px;
 			background-image: url('/dist/img/buildingOne-add1sm.jpeg');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+			h2 {
+				display: flex;
+				align-items: center;
+				top: 50%;
+				color: $main-color;
+				font-size: 3rem;
+				margin-bottom: 0;
+			}
 		}
 		&-txt {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: space-between;
+			gap: 3em;
 			width: 100%;
+			padding: 3em 1em;
+		}
+		&-heder {
+			align-self: flex-start;
 			padding: 1em;
+			width: 100%;
+			font-size: 2rem;
 		}
 	}
+	&__baner {
+		position: relative;
+		width: 100%;
+		height: 800px;
+		background-image: url('/dist/img/buildingOne-add3sm.jpeg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		&-anim {
+			position: absolute;
+			top: 45%;
+			display: flex;
+			white-space: nowrap;
+			font-size: 12rem;
+			color: $main-color;
+		}
+		&--one {
+			transform: translateX(-100%);
+			animation: scrollText3 66s infinite linear;
+		}
+		&--two {
+			transform: translateX(-100%);
+			animation: scrollText4 66s 0s infinite linear;
+		}
+	}
+
 	.close {
+		position: sticky;
+		bottom: 20px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin: 3em 3em;
-		padding: 0.2em 0.5em;
+		padding: 0.5em 0.5em;
 		width: 100px;
-		border: 1px solid $blackColor;
-		background-color: $main-color;
+		background-color: $blackColor;
+		color: $main-color;
+		border: none;
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 		cursor: pointer;
-		transition: background-color 0.3s, color 0.3s;
-		&:hover {
-			background-color: $blackColor;
-			color: $main-color;
-		}
 	}
 }
 
@@ -470,12 +518,9 @@ a {
 		&-txt {
 			position: absolute;
 			top: 0;
-			// width: 10000px;
 			font-size: 12rem;
-			// transform: translateX(-50%);
-			// align-items: center;
 			white-space: nowrap;
-			animation: scrollText 33s infinite linear;
+			// animation: scrollText 33s infinite linear;
 			transition: color 0.3s;
 			&:hover {
 				color: transparent;

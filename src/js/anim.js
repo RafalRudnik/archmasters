@@ -15,6 +15,7 @@ const btnTwo = document.querySelector('.work__section-button-two');
 const btnThree = document.querySelector('.work__section-button-three');
 const contactBanner = document.querySelector('.contact__baner-anim');
 
+
 let resolution = gsap.matchMedia();
 
 resolution.add('(min-width: 768px)', () => {
@@ -77,6 +78,7 @@ gsap.fromTo(
 		},
 	}
 );
+
 
 gsap.fromTo(
 	aboutLeftCard,
@@ -144,8 +146,6 @@ gsap.fromTo(
 	}
 );
 
-
-
 const handleObserver = () => {
 	const currentSection = window.scrollY;
 	let workDescOne = document.querySelector('.work-desc-one');
@@ -208,7 +208,7 @@ const handleObserver = () => {
 			test2();
 		} else if (
 			section.classList.contains('work__section-one') &&
-			section.offsetTop <= currentSection + 2000
+			section.offsetTop >= currentSection + 2000
 		) {
 			handleAllBtns();
 			removeActiveSection();

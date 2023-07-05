@@ -8,6 +8,7 @@ const acordeonBoxes = document.querySelectorAll('.accordeon__card');
 const btnOne = document.querySelector('.work__section-button-one');
 const closeBtn = document.querySelector('.close');
 const buidlingOne = document.querySelector('.building-one');
+const buildingOneHeader = document.querySelector('.building-one__card-img h2');
 
 const handleShowMenu = () => {
 	navMenu.classList.toggle('showNavigation');
@@ -60,10 +61,12 @@ const accordeonObserver = () => {
 const handleBuidlingShow = () => {
 	buidlingOne.classList.toggle('showBuilding');
 	buidlingOne.classList.remove('hideBuilding');
+	buildingOneHeader.classList.toggle('btnAnim');
 };
 const handBuldingClose = () => {
 	buidlingOne.classList.toggle('showBuilding');
 	buidlingOne.classList.add('hideBuilding');
+	buildingOneHeader.classList.toggle('btnAnim');
 };
 
 burgerBtn.addEventListener('click', handleShowMenu);
@@ -71,6 +74,7 @@ navBtn.addEventListener('click', handleShowMenu);
 navBtn.addEventListener('click', handlehideMenu);
 allLinks.forEach((link) => link.addEventListener('click', handleShowMenu));
 allLinks.forEach((link) => link.addEventListener('click', handlehideMenu));
+allLinks.forEach((link) => link.addEventListener('click', handBuldingClose));
 acordeonBoxes.forEach((box) => box.addEventListener('click', closeCard));
 btnOne.addEventListener('click', handleBuidlingShow);
 closeBtn.addEventListener('click', handBuldingClose);

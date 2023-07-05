@@ -26,4 +26,18 @@
 			height: 500px;
 		}
 	}
+	.building-one {
+		&__card {
+			&-img {
+				h2 {
+					font-size: 15rem;
+				}
+			}
+			&-heder {
+				width: 50%;
+				font-size: 6rem;
+				padding: 4em 2em;
+			}
+		}
+	}
 }
