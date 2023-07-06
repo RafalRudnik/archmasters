@@ -142,7 +142,7 @@ a {
 				font-size: 6rem;
 				font-weight: 100;
 				transform: translateY(100%);
-				animation: showHeader 1s 0s both;
+				animation: showHeader 1s .5s both;
 			}
 			span {
 				font-size: 2rem;
@@ -154,7 +154,7 @@ a {
 				font-size: 6rem;
 				font-weight: 100;
 				transform: translateY(100%);
-				animation: showHeader 1s 0.7s both;
+				animation: showHeader 1s 1s both;
 			}
 		}
 	}
@@ -357,7 +357,6 @@ a {
 		width: 100%;
 		height: fit-content;
 		padding: 1em;
-		overflow: hidden;
 	}
 	&-button {
 		display: flex;
