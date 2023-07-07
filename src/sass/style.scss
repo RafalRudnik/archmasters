@@ -127,7 +127,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url('../img/heroBig.jpeg');
+	background-image: url('../img/newHeroBig.jpeg');
 	background-position: center;
 	background-size: cover;
 	overflow: hidden;
@@ -142,7 +142,7 @@ a {
 				font-size: 6rem;
 				font-weight: 100;
 				transform: translateY(100%);
-				animation: showHeader 1s 0.5s both;
+				animation: showHeader 1s 1s both;
 			}
 			span {
 				font-size: 2rem;
@@ -154,7 +154,7 @@ a {
 				font-size: 6rem;
 				font-weight: 100;
 				transform: translateY(100%);
-				animation: showHeader 1s 1s both;
+				animation: showHeader 1s 1.3s both;
 			}
 		}
 	}
